@@ -40,15 +40,17 @@ spec:   # Deploment specific config
 
 
 ---   # have multiple YAML configurations within 1 file
-# Service
+# Service - internal default
 apiVersion: v1
 kind: Service
 metadata:
   name: webapp-service
 spec:
+  type: NodePort    # Set it an External Service
   selector:   # Select Pods to forward the request => connect service to pods
     app: webapp
   ports:
     - protocol: TCP
       port: 3000   # common standard to use same as target port
       targetPort: 3000   # containerPort of Deployment
+      nodePort: 30100
