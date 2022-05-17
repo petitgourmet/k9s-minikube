@@ -32,5 +32,5 @@ spec:
     app: mongo
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 27017
+      port: 27017   # common standard to use same as target port
+      targetPort: 27017   # containerPort of Deployment
