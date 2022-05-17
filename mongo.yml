@@ -22,3 +22,15 @@ spec:   # Deploment specific config
         ports:
         - containerPort: 27017
 ---   # have multiple YAML configurations within 1 file
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+spec:
+  selector:   # Select Pods to forward the request => connect service to pods
+    app: mongo
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 27017
