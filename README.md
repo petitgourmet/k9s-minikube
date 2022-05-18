@@ -1,6 +1,6 @@
-### Repository for the K8s in 1 hour video
+### Repository for the K8s
 
-#### K8s manifest files 
+#### K8s manifest files
 * mongo-config.yaml
 * mongo-secret.yaml
 * mongo.yaml
@@ -9,7 +9,7 @@
 #### K8s commands
 
 ##### start Minikube and check status
-    minikube start --vm-driver=hyperkit 
+    minikube start --vm-driver=hyperkit
     minikube status
 
 ##### get minikube node's ip address
@@ -31,16 +31,16 @@
 
 ##### get application logs
     kubectl logs {pod-name}
-    
+
 ##### stop your Minikube cluster
     minikube stop
 
 <br />
 
-> :warning: **Known issue - Minikube IP not accessible** 
+> :warning: **Known issue - Minikube IP not accessible**
 
 If you can't access the NodePort service webapp with `MinikubeIP:NodePort`, execute the following command:
-    
+
     minikube service webapp-service
 
 <br />
